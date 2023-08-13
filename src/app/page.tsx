@@ -98,7 +98,7 @@ type Select =
 
 function example(select: Select): string {
   if (select === "Hello World") {
-    return `let main = puts("Hello World!");`;
+    return `let main = print("Hello World!");`;
   } else if (select == "Fizzbuzz") {
     return `let fizzbuzz(n) = 
     if (n % 15 == 0) "fizzbuzz"
@@ -107,7 +107,7 @@ function example(select: Select): string {
     else n.int_to_string;
 
 let main = for (i in [1..=100]) {
-    fizzbuzz(i).puts;
+    fizzbuzz(i).println;
 };`;
   } else if (select == "Slow Fibonacci") {
     return `let fib(n) = n match {
