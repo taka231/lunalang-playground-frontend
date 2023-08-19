@@ -44,8 +44,8 @@ export default function Home() {
             >
               <option>Hello World</option>
               <option>Fizzbuzz</option>
-              <option>Slow Fibonacci</option>
-              <option>Fast Fibonacci</option>
+              <option>Recursive Fibonacci</option>
+              <option>Procedual Fibonacci</option>
               <option>Algebraic Data Types(List)</option>
             </select>
           </div>
@@ -67,7 +67,9 @@ export default function Home() {
         <div className="bg-zinc-800 h-80 p-2 overflow-auto">
           {data ? (
             <>
-              <div className="text-xl whitespace-pre-wrap">{data.stdout}</div>
+              <div className="text-xl text-amber-50 whitespace-pre-wrap">
+                {data.stdout}
+              </div>
               {data.error ? (
                 <div className="text-red-500 text-xl">{data.error}</div>
               ) : (
@@ -79,7 +81,7 @@ export default function Home() {
           ) : isLoading ? (
             <div className="text-xl text-amber-50">Loading...</div>
           ) : error ? (
-            <div className="text-xl">internal error</div>
+            <div className="text-xl text-amber-50">internal error</div>
           ) : (
             <div className="text-xl text-amber-50">Run to see result</div>
           )}
@@ -92,8 +94,8 @@ export default function Home() {
 type Select =
   | "Hello World"
   | "Fizzbuzz"
-  | "Slow Fibonacci"
-  | "Fast Fibonacci"
+  | "Recursive Fibonacci"
+  | "Procedural Fibonacci"
   | "Algebraic Data Types(List)";
 
 function example(select: Select): string {
@@ -109,7 +111,7 @@ function example(select: Select): string {
 let main = for (i in [1..=100]) {
     fizzbuzz(i).println;
 };`;
-  } else if (select == "Slow Fibonacci") {
+  } else if (select == "Recursive Fibonacci") {
     return `let fib(n) = n match {
     1 => 1,
     2 => 1,
@@ -117,7 +119,7 @@ let main = for (i in [1..=100]) {
 };
 
 let main = fib(10);`;
-  } else if (select == "Fast Fibonacci") {
+  } else if (select == "Procedural Fibonacci") {
     return `let fib(n) = {
     let result = &1;
     let prev_result = &1;
