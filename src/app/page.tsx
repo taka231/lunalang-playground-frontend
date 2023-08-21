@@ -45,7 +45,7 @@ export default function Home() {
               <option>Hello World</option>
               <option>Fizzbuzz</option>
               <option>Recursive Fibonacci</option>
-              <option>Procedual Fibonacci</option>
+              <option>Procedural Fibonacci</option>
               <option>Algebraic Data Types(List)</option>
             </select>
           </div>
